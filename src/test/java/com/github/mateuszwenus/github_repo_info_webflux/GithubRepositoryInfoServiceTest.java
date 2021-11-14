@@ -24,7 +24,7 @@ public class GithubRepositoryInfoServiceTest {
 
 	private static final String OWNER = "testOwner";
 	private static final String REPOSITORY_NAME = "testRepo";
-	
+
 	private MockWebServer mockServer;
 	private WebClient webClient;
 	private GithubRepositoryInfoService svc;
@@ -77,7 +77,7 @@ public class GithubRepositoryInfoServiceTest {
 		assertThat(info.stars(), is(10));
 		assertThat(info.createdAt(), is("today"));
 	}
-	
+
 	@Test
 	public void shouldThrowExceptionWhenUserIsNotFound() {
 		assertThrows(RepositoryNotFoundException.class, () -> {
@@ -87,7 +87,7 @@ public class GithubRepositoryInfoServiceTest {
 			svc.getRepositoryInfo(OWNER, REPOSITORY_NAME).block();			
 		});
 	}
-	
+
 	@Test
 	public void shouldThrowExceptionForHttpErrorOtherThan404() {
 		assertThrows(RepositoryInfoServiceException.class, () -> {

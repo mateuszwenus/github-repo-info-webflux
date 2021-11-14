@@ -15,11 +15,11 @@ import reactor.core.publisher.Mono;
 public class RepositoryInfoControllerTestsWithMockedService {
 
 	@Autowired
-    private WebTestClient webTestClient;
-	
+	private WebTestClient webTestClient;
+
 	@MockBean
 	private RepositoryInfoService repositoryInfoService;
-	
+
 	@Test
 	public void shouldReturnHttp200WhenServiceReturnsValidResponse() throws Exception {
 		RepositoryInfo repoInfo = new RepositoryInfo("Mock repository", "description", "http://clone", 0, "now");
@@ -33,7 +33,7 @@ public class RepositoryInfoControllerTestsWithMockedService {
 			.expectBody(RepositoryInfo.class)
 			.isEqualTo(repoInfo);
 	}
-	
+
 	@Test
 	public void shouldReturnHttp404WhenServiceReturnsNotFoundException() throws Exception {
 		when(repositoryInfoService.getRepositoryInfo(any(), any())).thenReturn(Mono.error(new RepositoryNotFoundException()));
@@ -44,7 +44,7 @@ public class RepositoryInfoControllerTestsWithMockedService {
 			.expectStatus()
 			.isNotFound();
 	}
-	
+
 	@Test
 	public void shouldReturnHttp5xxWhenServiceReturnsGenericException() throws Exception {
 		when(repositoryInfoService.getRepositoryInfo(any(), any())).thenReturn(Mono.error(new RepositoryInfoServiceException()));

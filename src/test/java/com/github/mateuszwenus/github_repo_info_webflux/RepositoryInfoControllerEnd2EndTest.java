@@ -23,7 +23,7 @@ public class RepositoryInfoControllerEnd2EndTest {
 			.expectStatus()
 			.isOk();
 	}
-	
+
 	@Test
 	public void shouldReturnHttp404WhenOwnerDoesNotExist() {
 		testClient.get()
@@ -32,7 +32,7 @@ public class RepositoryInfoControllerEnd2EndTest {
 			.expectStatus()
 			.isNotFound();
 	}
-	
+
 	@Test
 	public void shouldReturnHttp404WhenRepositoryDoesNotExist() {
 		testClient.get()

@@ -14,7 +14,7 @@ public class GithubRepositoryInfoService implements RepositoryInfoService {
 	public GithubRepositoryInfoService(WebClient webClient) {
 		this.webClient = webClient;
 	}
-	
+
 	@Override
 	public Mono<RepositoryInfo> getRepositoryInfo(String owner, String repositoryName) {
 		return webClient.get()
