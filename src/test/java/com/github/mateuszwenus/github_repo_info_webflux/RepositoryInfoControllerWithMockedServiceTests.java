@@ -12,7 +12,7 @@ import org.springframework.test.web.reactive.server.WebTestClient;
 import reactor.core.publisher.Mono;
 
 @WebFluxTest
-public class RepositoryInfoControllerTestsWithMockedService {
+public class RepositoryInfoControllerWithMockedServiceTests {
 
 	@Autowired
 	private WebTestClient webTestClient;

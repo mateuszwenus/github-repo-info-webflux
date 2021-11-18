@@ -22,7 +22,7 @@ import okhttp3.mockwebserver.MockWebServer;
 
 @SpringBootTest(webEnvironment = WebEnvironment.RANDOM_PORT)
 @ActiveProfiles("MOCKED-GITHUB")
-public class RepositoryInfoControllerTestsWithMockedGithub {
+public class RepositoryInfoControllerWithMockedGithubTests {
 
 	@Value("${github.api.port}")
 	private int githubApiPort;
