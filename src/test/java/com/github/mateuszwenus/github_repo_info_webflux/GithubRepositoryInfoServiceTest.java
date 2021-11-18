@@ -84,7 +84,7 @@ public class GithubRepositoryInfoServiceTest {
 			// given
 			mockServer.enqueue(new MockResponse().setResponseCode(HttpStatus.NOT_FOUND.value()));
 			// when
-			svc.getRepositoryInfo(OWNER, REPOSITORY_NAME).block();			
+			svc.getRepositoryInfo(OWNER, REPOSITORY_NAME).block();
 		});
 	}
 
@@ -94,7 +94,7 @@ public class GithubRepositoryInfoServiceTest {
 			// given
 			mockServer.enqueue(new MockResponse().setResponseCode(HttpStatus.BAD_REQUEST.value()));
 			// when
-			svc.getRepositoryInfo(OWNER, REPOSITORY_NAME).block();			
+			svc.getRepositoryInfo(OWNER, REPOSITORY_NAME).block();
 		});
 	}
 }
