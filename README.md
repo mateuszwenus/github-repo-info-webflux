@@ -30,6 +30,5 @@ curl localhost:8080/repositories/mateuszwenus/github-repo-info-webflux
 
 ## TODOs
 
-* logging
 * circuit breaker
 * Github API authentication?
