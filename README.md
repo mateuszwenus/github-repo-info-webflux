@@ -28,7 +28,14 @@ You can test the running app using curl:
 curl localhost:8080/repositories/mateuszwenus/github-repo-info-webflux
 ```
 
+## Building and running using Docker
+```bash
+docker build -t github-repo-info-webflux .
+docker run -p 8080:8080 github-repo-info-webflux
+```
+
 ## TODOs
 
 * circuit breaker
 * Github API authentication?
+
